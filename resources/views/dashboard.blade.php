@@ -5,6 +5,7 @@
     <title>Laravel 10.48.0 - CRUD User Example</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/read.css') }}">
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </head>
 
@@ -35,6 +36,9 @@
         </div>
     </nav>
     @yield('content')
+    <footer class="footer">
+        <p>Lập trình web @01/2024</p>
+    </footer>
 </body>
 
 </html>
