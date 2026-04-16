@@ -1,36 +1,58 @@
-@extends('dashboard')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-border">
+        <nav>
+            <a href="#">Home</a> | 
+            <a href="{{ route('user.login') }}"><b>Đăng xuất</b></a>
+        </nav>
+    </header>
 
-@section('content')
-<main class="login-form">
-    <div class="container">
-        <div class="row justify-content-center">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Like</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                    <tr>
-                        <th>{{ $user->id }}</th>
-                        <th>{{ $user->name }}</th>
-                        <th>{{ $user->email }}</th>
-                        <th>{{ $user->like}}</th>
-                        <th>
-                            <a href="{{ route('user.readUser', ['id' => $user->id]) }}">View</a> |
-                            <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Edit</a> |
-                            <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
-                        </th>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+    <main class="content-container">
+        <h1>Danh sách user</h1>
+
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($list as $l)
+                <tr>
+                    <td>{{ $l->id }}</td>
+                    <td>{{ $l->name }}</td>
+                    <td>{{ $l->email }}</td>
+                    <td class="actions-cell"><a href="{{ route('user.update', ['id' => $l->id]) }}">Edit</a> | View | Delete</td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="4">Chưa có dữ liệu</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <button class="page-link">Previous</button>
+            <button class="page-link active">1</button>
+            <button class="page-link">2</button>
+            <button class="page-link">3</button>
+            <button class="page-link">Next</button>
         </div>
-    </div>
-</main>
-@endsection
+    </main>
+
+    <footer class="container-border">
+        Lập trình web @01/2024
+    </footer>
+</body>
+</html>
