@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/auth.json
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+=======
+=======
+>>>>>>> dbc77811c60e8672bd394b8ef23b0f4af9f26319
 # Build and Release Folders
 bin-debug/
 bin-release/
@@ -16,3 +44,7 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+<<<<<<< HEAD
+>>>>>>> a755a542c8fcae776f546e8d5d639f657a7ef507
+=======
+>>>>>>> dbc77811c60e8672bd394b8ef23b0f4af9f26319
