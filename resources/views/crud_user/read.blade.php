@@ -22,10 +22,13 @@
                     <span class="label">Email:</span>
                     <span class="value">{{$messi->email}}</span>
                 </div>
+                <div class="btn-area">
+                     <a class="btn-edit" href="{{ route('user.updateUser', ['id' => $messi->id]) }}">Chỉnh sửa</a>
+                </div>
             </div>
 
         </div>
-        
+
     </div>
 </main>
 @endsection
